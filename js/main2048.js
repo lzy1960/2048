@@ -3,6 +3,10 @@ var board = new Array();
 var score = 0;
 var hasConflicted = new Array();
 
+window.onload=function(event){
+	event.preventDefault();
+}
+
 $(document).ready(function() {
 	newGame();
 });
@@ -171,6 +175,7 @@ document.addEventListener('touchstart', function(event) {
 });
 
 document.addEventListener('touchend', function(event) {
+
 	endx = event.changedTouches[0].pageX;
 	endy = event.changedTouches[0].pageY;
 
@@ -215,9 +220,7 @@ document.addEventListener('touchend', function(event) {
 	}
 });
 
-document.addEventListener('touchmove', function(event) {
-	event.preventDefault();
-});
+
 
 function isGameOver() {
 	if (noSpace(board) && noMove(board)) {
