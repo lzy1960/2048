@@ -215,6 +215,10 @@ document.addEventListener('touchend', function(event) {
 	}
 });
 
+document.addEventListener('touchmove', function(event) {
+	event.preventDefault();
+});
+
 function isGameOver() {
 	if (noSpace(board) && noMove(board)) {
 		gameover();
